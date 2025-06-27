@@ -2,13 +2,13 @@ package genAssign;
 
 public class GenCheckArr {
 	
-	public static <T> boolean check(T []arr ,int f ,int s) {
+	public static <T> boolean check(T []arr ,T f ,T s) {
 		int F=0,S=0;
 		for(T t:arr) {
-			if((int)t==f) {
+			if(t==f) {
 				F=1;
 			}
-			if((int)t==s) {
+			if((t==s)) {
 				S=1;
 			}	
 		}
@@ -16,8 +16,8 @@ public class GenCheckArr {
 		return S==1&&F==1;
 	}
 	public static void main(String[] args) {
-		Integer arr[]= {10,20,30,40,50};
-		if(GenCheckArr.check(arr, 10, 1)) {
+		String arr[]= {"hii" ,"Hello"};
+		if(GenCheckArr.check(arr, "hii", "Hello")) {
 			System.out.println("Both are Present");
 		}
 		else {
