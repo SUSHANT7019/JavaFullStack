@@ -26,6 +26,6 @@ create table film (
 create table inventory (
     inventory_id serial primary key,
     film_id int references film(film_id),
-    store_id int,
+    store_id int references film(film_id),
     last_update timestamp default current_timestamp
 );
