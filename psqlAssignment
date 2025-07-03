@@ -1,0 +1,31 @@
+create table catagory(catagory_id SERIAL primary key,name varchar(100),last_updare 
+timestamp default current_timestamp);
+
+create table film_catagary(fim_id SERIAL primary key , catagory_id int references catagory(catagory_id),last_updare 
+timestamp default current_timestamp);
+
+create table language (language_id SERIAL primary key , name varchar(100),last_updare 
+timestamp default current_timestamp);
+ 
+create table film (
+    film_id serial primary key,
+    title varchar(255),
+    description varchar(255),
+    release_year int,
+    language_id int references language(language_id),
+    rental_duration int,
+    rental_rate decimal(5,2),
+    length int,
+    replacement_cost decimal(5,2),
+    rating varchar(10),
+    last_update timestamp default current_timestamp,
+    special_features text,
+    fulltext text
+);
+
+create table inventory (
+    inventory_id serial primary key,
+    film_id int references film(film_id),
+    store_id int,
+    last_update timestamp default current_timestamp
+);
